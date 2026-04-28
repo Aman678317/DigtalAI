@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #000000;
+  --color-background: #0B0F19;
   --color-foreground: #ffffff;
   
-  --color-primary: #10b981; /* Emerald-500 for a fresh golf feel */
-  --color-secondary: #3b82f6; /* Blue-500 */
-  --color-accent: #f59e0b; /* Amber-500 */
+  --color-primary: #00FFC6; /* Neon Green Accent */
+  --color-secondary: #3b82f6;
+  --color-accent: #00FFC6;
   
   --color-card: rgba(255, 255, 255, 0.03);
   --color-card-border: rgba(255, 255, 255, 0.1);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
-  --radius-apple: 1.25rem;
+  --radius-apple: 1.5rem;
 }
 
 :root {
-  --background: #000000;
+  --background: #0B0F19;
   --foreground: #ffffff;
-  --card: rgba(255, 255, 255, 0.05);
+  --card: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.1);
-  --glass: rgba(255, 255, 255, 0.03);
+  --glass: rgba(255, 255, 255, 0.02);
+  --neon: #00FFC6;
 }
 
 * {
@@ -42,10 +43,17 @@ body {
 
 .glass-card {
   background: var(--glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-apple);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 255, 198, 0.3);
+  box-shadow: 0 0 30px rgba(0, 255, 198, 0.05);
 }
 
 .text-gradient {
@@ -54,12 +62,17 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.text-neon {
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(0, 255, 198, 0.3);
+}
+
 .bg-mesh {
   background-image: 
-    radial-gradient(at 0% 0%, hsla(160, 84%, 39%, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(220, 84%, 39%, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, hsla(280, 84%, 39%, 0.1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(30, 84%, 39%, 0.1) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(0, 255, 198, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(0, 255, 198, 0.05) 0px, transparent 50%);
 }
 
 @keyframes float {
@@ -70,4 +83,15 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.btn-neon {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 198, 0.2);
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 198, 0.4);
+  transform: translateY(-2px);
 }
