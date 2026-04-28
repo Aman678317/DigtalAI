@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/Input'
 import { Search, Heart, Filter, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default function CharitiesPage() {
   const [charities, setCharities] = useState<any[]>([])
   const [loading, setLoading] = useState(true)

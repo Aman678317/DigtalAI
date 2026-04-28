@@ -19,6 +19,8 @@ import {
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default function AdminDashboard() {
   const [loading, setLoading] = useState(true)
   const [stats, setStats] = useState({

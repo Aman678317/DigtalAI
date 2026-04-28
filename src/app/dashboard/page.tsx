@@ -11,6 +11,8 @@ import { ScoreList } from '@/components/dashboard/ScoreList'
 import { SubscriptionCard } from '@/components/dashboard/SubscriptionCard'
 import { CharityCard } from '@/components/dashboard/CharityCard'
 
+export const dynamic = 'force-dynamic'
+
 export default function DashboardPage() {
   const [user, setUser] = useState<any>(null)
   const [profile, setProfile] = useState<any>(null)
