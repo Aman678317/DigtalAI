@@ -41,7 +41,7 @@ export async function POST(request: Request) {
           .from('subscriptions')
           .update({
             status: subscription.status,
-            renewal_date: new Date(subscription.current_period_end * 1000).toISOString(),
+            renewal_date: new Date((subscription as any).current_period_end * 1000).toISOString(),
             stripe_subscription_id: subscription.id,
             amount: subscription.items.data[0].plan.amount,
           })
